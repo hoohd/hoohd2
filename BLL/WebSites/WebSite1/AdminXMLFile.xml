@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<s1 id =" root" title ="管理员面板" url ="" description="">
+  <s2 url ="" title="管理员信息" description ="">
+      <s3 url ="" title="外聘教师" description =""/>
+      <s3 url ="" title="新增用户" description =""/>
+      <s3 url ="" title="修改密码" description =""/>
+      <s3 url ="" title="发布通知" description =""/>
+  </s2>
+  <s2 url ="" title="数据管理" description ="">
+    <s3 url ="" title="导入数据" description =""/>
+    <s3 url ="" title="清空数据" description =""/>
+    <s3 url ="" title="导出数据" description =""/>
+
+  </s2>
+  <s2 url ="" title="异动处理" description ="">
+    <s3 url ="" title="学生情况" description =""/>
+    <s3 url ="" title="教室情况" description =""/>
+    <s3 url ="" title="作业情况" description =""/>
+
+  </s2>
+  <s2 url ="" title="数据分析" description ="">
+    <s3 url ="" title="系部分析" description =""/>
+    <s3 url ="" title="漏报统计" description =""/>
+    <s3 url ="" title="缺勤汇总" description =""/>
+    <s3 url ="" title="作业统计" description =""/>
+
+
+  </s2>
+
+
+
+</s1>

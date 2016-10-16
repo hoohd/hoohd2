@@ -1,0 +1,81 @@
+﻿<%@ Master Language="VB" CodeFile="Main.master.vb" Inherits="Main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+    <style type ="text/css">
+        #mian {
+        width:800px;
+        height:600px;
+        background-color:#808080
+        }
+       #top{
+            width=100%;
+            margin-top: 0px;
+        }
+        #content {
+        width:100%;
+        height:500px;
+        background-color:#ff6a00
+        }
+         #left {
+        width:150px;
+        height:100%;
+        float:left;
+        background-color:#ffd800
+        
+        }
+        #right {
+        width:650px;
+        height:100%;
+        float:right:
+        background-color:#4cff00;
+        }
+        #foot {
+        width:100%;
+        height:100px;
+        background-color:#4cff00
+        }
+      
+            
+    </style>
+
+<body>
+    <form id="form1" runat="server">
+
+        <div id ="main">
+            <div id="top">
+               
+            </div>
+            <div id="content">
+                <div id="left">
+
+                    <asp:TreeView ID="TreeView1" runat="server" DataSourceID="XmlDataSource1" Height="324px" Width="127px">
+                        <DataBindings>
+                            <asp:TreeNodeBinding DataMember="s1" TextField="title" />
+                            <asp:TreeNodeBinding DataMember="s2" NavigateUrlField="url" TextField="title" />
+                            <asp:TreeNodeBinding DataMember="s3" NavigateUrlField="url" TextField="title" />
+                        </DataBindings>
+                    </asp:TreeView>
+                </div>
+                <div id="right">
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+                        <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/AdminXMLFile.xml"></asp:XmlDataSource>
+        
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <div id="foot"></div>
+        </div>
+    
+    </form>
+</body>
+
+</html>

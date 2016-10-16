@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMasterPage.master.cs" Inherits="Admin_AdminMasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type ="text/css">
+        #main {
+            width:800px;
+            height:600px;
+            background-color:#808080
+        }
+         #top {
+            width:100%;
+            height:100px;
+            background-color:#clc1e5;
+        }
+          #content {
+            width:100%;
+            height:500px;
+           
+        }
+           #left {
+            width:150px;
+            height:100%;
+            float:left;
+        }
+            #right {
+            width:650px;
+            height:100%;
+           float:left;
+        }
+             #foot {
+            width:100%;
+            height:100px;
+            background-color:#clc1e5;
+        }
+    </style>
+   
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id =" main">
+            <div id =" top">
+                <h1>母版页测试</h1>
+            </div>
+            <div id="content">
+                <div id ="left">
+                    <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/Admin/AdminXMLFile.xml"></asp:XmlDataSource>
+                    <asp:TreeView ID="TreeView1" runat="server" DataSourceID="XmlDataSource1">
+                        <DataBindings>
+                            <asp:TreeNodeBinding DataMember="s1" TextField="title" />
+                            <asp:TreeNodeBinding DataMember="s2" TextField="title" />
+                            <asp:TreeNodeBinding DataMember="s3" TextField="title" />
+                        </DataBindings>
+                    </asp:TreeView>
+                </div>
+                <div id ="right">
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+   
+    </form>
+</body>
+</html>
