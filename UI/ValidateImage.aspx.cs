@@ -18,9 +18,24 @@ public partial class ValidateImage : System.Web.UI.Page
         }
         Session["Code"] = strCode;
         Bitmap bmp = new Bitmap(80, 20);
+        for(int i=0;i<30;i++)
+        {
+            int x = rd.Next(80);
+            int y = rd.Next(20);
+            bmp.SetPixel(x, y, Color.White);
+        }
         Graphics g = Graphics.FromImage(bmp);
         Font fnt = new Font("Times New Roman", 10, FontStyle.Bold);
         g.DrawString(strCode, fnt, Brushes.AliceBlue, 0, 0);
+        for (int i = 0; i < 4; i++) ;
+        {
+            int x1 = rd.Next(80);
+            int y1 = rd.Next(20);
+            int x2 = rd.Next(80);
+            int y2 = rd.Next(20);
+            g.DrawLine(new Pen(Color.White), x1, y1, x2, y2);
+        }
         bmp.Save(Response.OutputStream, ImageFormat.Gif);
+
     }
 }
