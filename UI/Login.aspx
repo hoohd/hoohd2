@@ -14,11 +14,11 @@
         <br />
         <asp:Label ID="Label2" runat="server" Text="密码"></asp:Label>
         <asp:TextBox ID="TextBox2" runat="server" OnTextChanged="TextBox2_TextChanged"></asp:TextBox>
-        <image src="ValidateImage.aspx" alt="提示文字" style ="width:80px; height:20px" onclick ="this.src = this.src + '?'" />
+        <img src="ValidateImage.aspx" alt="提示文字" style ="width:80px; height:20px" onclick ="this.src = this.src + '?'" />
         <br />
         <asp:Button ID="Button1" runat="server" onclick="Button_Click" Text="登陆" />
         <br />
-        <asp:Label ID="Label3" runat="server" ForeColor="Red" Text="Label"></asp:Label>
+        <asp:Label ID="Label3" runat="server" ForeColor="Red" Text="帐密123"></asp:Label>
     </div>
     </form>
 </body>
