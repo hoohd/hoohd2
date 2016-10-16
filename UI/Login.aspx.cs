@@ -16,15 +16,15 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Button_Click(object sender, EventArgs e)
     {
-        string strSQL = "select * from users where userid='" + TextBox1.Text + "'";
+        string strSQL = "select * from TabTeachers where UserID='" + TextBox1.Text + "'";
         DataTable dt = new DataTable();
         dt = LoginOperation.GetDTFromDAL(strSQL);
         if (dt.Rows.Count == 1)
         {
             if (dt.Rows[0]["password"].ToString() == TextBox2.Text)
             {
-                Session["userid"] = dt.Rows[0]["userid"].ToString();
-                Session["userrole"] = dt.Rows[0]["userrole"].ToString();
+                Session["userid"] = dt.Rows[0]["UserID"].ToString();
+                Session["userrole"] = dt.Rows[0]["Role"].ToString();
                 string Role = dt.Rows[0]["Role"].ToString();
                 switch (Role)
                 {
