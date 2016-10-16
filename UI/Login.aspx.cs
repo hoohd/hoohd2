@@ -11,7 +11,7 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        
     }
 
     protected void Button_Click(object sender, EventArgs e)
@@ -19,48 +19,48 @@ public partial class _Default : System.Web.UI.Page
         string strSQL = "select * from TabTeachers where UserID='" + TextBox1.Text + "'";
         DataTable dt = new DataTable();
         dt = LoginOperation.GetDTFromDAL(strSQL);
+       
         if (dt.Rows.Count == 1)
         {
-            if (dt.Rows[0]["password"].ToString() == TextBox2.Text)
+            if (TextBox3.Text == Session["ValidateCode"].ToString())
             {
-                Session["userid"] = dt.Rows[0]["UserID"].ToString();
-                Session["userrole"] = dt.Rows[0]["Role"].ToString();
-                string Role = dt.Rows[0]["Role"].ToString();
-                switch (Role)
+                if (dt.Rows[0]["UserPWD"].ToString() == TextBox2.Text)
                 {
-                    case "1":
-                        Response.Redirect("AdminDefault.aspx");
-                        break;
-                    case "2":
-                        Response.Redirect("AdminDefault.aspx");
-                        break;
-                    case "3":
-                        Response.Redirect("AdminDefault.aspx");
-                        break;
-                    case "4":
-                        Response.Redirect("AdminDefault.aspx");
-                        break;
+                    Session["userid"] = dt.Rows[0]["UserID"].ToString();
+                    Session["userrole"] = dt.Rows[0]["Role"].ToString();
+                    string Role = dt.Rows[0]["Role"].ToString();
+                    switch (Role)
+                    {
+                        case "1":
+                            Response.Redirect("AdminDefault.aspx");
+                            break;
+                        case "2":
+                            Response.Redirect("AdminDefault.aspx");
+                            break;
+                        case "3":
+                            Response.Redirect("AdminDefault.aspx");
+                            break;
+                        case "4":
+                            Response.Redirect("AdminDefault.aspx");
+                            break;
 
+                    }
+                }
+                //}
+                else
+                {
+                    Label3.Text = "密码不正确！";
                 }
             }
-            else {
-                Label3.Text = "密码不正确！";
+            else
+            {
+                Label3.Text = "验证码错误";
             }
-           
-           
         }
         else
         {
             Label3.Text = "用户名不正确！";
         }
     }
-
-    protected void TextBox2_TextChanged(object sender, EventArgs e)
-    {
-
     }
-    protected void TextBox1_TextChanged(object sender, EventArgs e)
-    {
-
-    }
-}
+  

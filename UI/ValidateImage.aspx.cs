@@ -27,7 +27,7 @@ public partial class ValidateImage : System.Web.UI.Page
         string[] font = { "宋体", "新宋体", "幼圆", "楷体_GB2312" };
         Random rd = new Random();
         string chkCode = codes[rd.Next(codes.Length)];
-        Session["ValidataCode"] = chkCode;
+        Session["ValidateCode"] = chkCode;
         Bitmap bmp = new Bitmap(80, 20);
         /*
          * 噪点
