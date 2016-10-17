@@ -23,5 +23,16 @@ namespace DAL
 
             return dt;
         }
+        public static List<string>GeiDistinceColoum(string strSQL,string str1)
+        {
+            DataTable dt = GetDT(strSQL);
+            List<string> strList = new List<string>();
+            foreach(DataRow dr in dt.Rows)
+            {
+                string str = dr[str1].ToString();
+                strList.Add(str);
+            }
+            return strList;
+        }
     }
 }

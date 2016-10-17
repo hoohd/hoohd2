@@ -15,7 +15,7 @@ public partial class AdminDefault : System.Web.UI.Page
 
     {
         if (!IsPostBack) {
-            Label1.Text = Session["userid"].ToString() + "你好,你的权限为" + Session["userrole"].ToString();
+            Label1.Text = Session["userid"].ToString()+Session["username"].ToString() + "你好,你的权限为" + Session["userrole"].ToString();
 
             DataTable dt = LoginOperation.GetDTFromDAL("select distinct Department from TabTeachers");
             for (int i = 0; i < dt.Rows.Count; i++) {

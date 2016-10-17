@@ -28,6 +28,7 @@ public partial class _Default : System.Web.UI.Page
                 {
                     Session["userid"] = dt.Rows[0]["UserID"].ToString();
                     Session["userrole"] = dt.Rows[0]["Role"].ToString();
+                    Session["username"] = dt.Rows[0]["UserName"].ToString();
                     string Role = dt.Rows[0]["Role"].ToString();
                     switch (Role)
                     {
