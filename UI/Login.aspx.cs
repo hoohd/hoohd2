@@ -42,7 +42,8 @@ public partial class _Default : System.Web.UI.Page
                             Response.Redirect("AdminDefault.aspx");
                             break;
                         case "4":
-                            Response.Redirect("AdminDefault.aspx");
+                            Response.Redirect("Admin/AddNewTeacher.aspx");
+                            
                             break;
 
                     }

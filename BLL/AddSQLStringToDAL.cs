@@ -16,7 +16,7 @@ namespace BLL
         }
         private static string BuilSQLDistinctString(string strTableName,string str1)
         {
-            return "select distinct" + str1 + "from" + strTableName;
+            return "select distinct " + str1 + " from " + strTableName;
         }
     }
 }
